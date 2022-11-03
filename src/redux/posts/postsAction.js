@@ -22,7 +22,7 @@ const fetchPostsReqFail = (error) => {
   };
 };
 
-export const fetchData = () => {
+const fetchData = () => {
   return (dispatch) => {
     dispatch(fetchPostsReq());
     axios
@@ -37,3 +37,5 @@ export const fetchData = () => {
       });
   };
 };
+
+export { fetchData };
