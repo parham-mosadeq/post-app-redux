@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 // router
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useLocation } from 'react-router-dom';
+// query string
+import queryString from 'query-string';
 
 const Post = ({ data }) => {
   const [expand, setExpand] = useState(false);
 
   const { title, body, tags, reactions, id, userId } = data;
-  const a = useParams();
-  console.log(a);
+  const tag = useParams();
+  const loc = useLocation();
 
   return (
     <div>
@@ -19,10 +21,10 @@ const Post = ({ data }) => {
       <div>
         <p>
           tags:
-          {tags.map((tags, idx) => {
+          {tags.map((tag, idx) => {
             return (
-              <Link key={idx} to={`/${tags}`}>
-                {tags}
+              <Link key={idx} to={`/posts/${tag}`}>
+                #{tag}
               </Link>
             );
           })}

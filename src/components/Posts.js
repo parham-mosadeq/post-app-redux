@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 // data
 import { fetchData } from '../redux/posts/postsAction';
 // redux
@@ -7,15 +7,23 @@ import { useDispatch, useSelector } from 'react-redux';
 import Post from './Post';
 // loader
 import Loader from './loader/Loader';
+// router
+import { useNavigate } from 'react-router-dom';
 
 const Posts = () => {
+  //managing loc's and nav's btn
+  const nav = useNavigate();
+
+  // fetching data
   useEffect(() => {
     dispatch(fetchData());
   }, []);
 
+  // reading data from redux
   const dispatch = useDispatch();
   const postData = useSelector((state) => state.postState);
 
+  // destructuring received data
   const {
     isLoading,
     posts: { posts },
@@ -36,6 +44,9 @@ const Posts = () => {
         <p>{error}</p>
       )}
 
+      <div>
+        <button onClick={() => nav('/')}>home</button>
+      </div>
     </div>
   );
 };
