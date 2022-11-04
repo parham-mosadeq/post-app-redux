@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 // data
 import { fetchData } from '../redux/posts/postsAction';
 // redux
@@ -14,14 +14,14 @@ const Posts = () => {
   //managing loc's and nav's btn
   const nav = useNavigate();
 
-  // fetching data
-  useEffect(() => {
-    dispatch(fetchData());
-  }, []);
-
   // reading data from redux
   const dispatch = useDispatch();
   const postData = useSelector((state) => state.postState);
+
+  // fetching data
+  useEffect(() => {
+    dispatch(fetchData());
+  }, [dispatch]);
 
   // destructuring received data
   const {
