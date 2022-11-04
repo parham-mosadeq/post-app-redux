@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
 // router
-import { Link, useParams, useLocation } from 'react-router-dom';
-// query string
-import queryString from 'query-string';
+import { Link } from 'react-router-dom';
 
 const Post = ({ data }) => {
   const [expand, setExpand] = useState(false);
 
-  const { title, body, tags, reactions, id, userId } = data;
-  const tag = useParams();
-  const loc = useLocation();
+  const { title, body, tags, reactions } = data;
 
   return (
     <div>
