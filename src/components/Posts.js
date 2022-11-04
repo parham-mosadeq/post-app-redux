@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 //component
 import Post from './Post';
 // loader
-import Loader from './loader/Loader';
+import Loader from './layouts/loader/Loader';
 // router
 import { useNavigate } from 'react-router-dom';
 

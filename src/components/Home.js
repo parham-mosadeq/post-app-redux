@@ -1,10 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
+// component
+import Navbar from './layouts/navbar/Navbar';
+import Footer from './layouts/footer/Footer';
+
 const Home = () => {
   return (
     <div>
-      this is home
-      <Link to='/posts'>posts</Link>
+      <Navbar />
+      <Footer />
     </div>
   );
 };
