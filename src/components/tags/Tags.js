@@ -1,13 +1,11 @@
-import React, { useEffect } from 'react';
-import { useParams, Link, useNavigate, useLocation } from 'react-router-dom';
-// query string
-import queryString from 'query-string';
+import React from 'react';
+
+import { useParams, Link } from 'react-router-dom';
 // redux
 import { useSelector } from 'react-redux';
 
 const Tags = () => {
   const tag = useParams();
-  const nav = useNavigate();
 
   const filteredState = useSelector((state) => state.postState);
 
@@ -50,6 +48,8 @@ const Tags = () => {
                       </div>
                     </div>
                   );
+                } else {
+                  return [];
                 }
               })
             ) : (
