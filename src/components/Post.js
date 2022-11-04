@@ -10,7 +10,7 @@ const Post = ({ data }) => {
   return (
     <div>
       <div>
-        <h3>{title}</h3>
+        <h3>{title}...</h3>
         <button onClick={() => setExpand(!expand)}>more</button>
         <div>{expand && <p>{body}</p>}</div>
       </div>
