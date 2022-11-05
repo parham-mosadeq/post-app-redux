@@ -8,6 +8,15 @@ import { Link } from 'react-router-dom';
 // toast
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+// styles
+import {
+  MainContainer,
+  Article,
+  WriteBtnContainer,
+  Body,
+  TitleInput,
+  LinkContainer,
+} from '../styles/styles';
 
 const Write = () => {
   const handleToast = (txt) => {
@@ -27,24 +36,24 @@ const Write = () => {
   const dispatch = useDispatch();
 
   return (
-    <main>
-      <article>
-        <input
+    <MainContainer>
+      <Article>
+        <TitleInput
           value={write.txtTitle}
           onChange={(e) => dispatch(txtTitle(e.target.value))}
           type='text'
           placeholder='title'
         />
-        <textarea
+        <Body
           value={write.textarea}
           onChange={(e) => dispatch(txtArea(e.target.value))}
-          placeholder='body'
+          placeholder='Write....'
           cols='50'
           rows='10'
-        ></textarea>
-      </article>
+        ></Body>
+      </Article>
 
-      <div>
+      <WriteBtnContainer>
         <button
           onClick={() => {
             handleToast('sent');
@@ -61,13 +70,13 @@ const Write = () => {
         >
           clear
         </button>
-      </div>
-      <div>
+      </WriteBtnContainer>
+      <LinkContainer>
         <Link to='/'>home</Link>
         <Link to='/posts'>post</Link>
-      </div>
+      </LinkContainer>
       <ToastContainer />
-    </main>
+    </MainContainer>
   );
 };
 
