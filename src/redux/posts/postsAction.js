@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+import queryString from 'query-string';
 const baseUrl = 'https://dummyjson.com/posts';
 
 const fetchPostsReq = () => {

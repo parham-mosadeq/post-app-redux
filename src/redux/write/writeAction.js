@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { randomNumber } from '../../functions/functions';
 
 const writePostReq = () => {
   return {
@@ -20,10 +21,16 @@ const writePostFailed = (err) => {
   };
 };
 
-const send = (txtTitle, txtArea) => {
+const txtTitle = (txtTitle) => {
   return {
-    type: 'POST',
-    payload: { txtArea, txtTitle },
+    type: 'TXT_TITLE',
+    payload: txtTitle,
+  };
+};
+const txtArea = (txtArea) => {
+  return {
+    type: 'TXT_BODY',
+    payload: txtArea,
   };
 };
 const clear = () => {
@@ -33,24 +40,20 @@ const clear = () => {
   };
 };
 
-const sendPost = () => {
+const sendPost = (txtTitle, txtArea) => {
   const data = {
-    title: '',
-    userId: null,
+    title: txtTitle,
+    // body: txtArea,
+    userId: randomNumber(100),
   };
 
   return (dispatch) => {
-    writePostReq(dispatch());
-
+    dispatch(writePostReq());
     axios
-      .post('https://dummyjson.com/posts/add', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      })
-      .then((resp) => console.log(resp.data))
-      .catch((error) => console.warn(error.message));
+      .post('https://dummyjson.com/posts/add', data)
+      .then((resp) => dispatch(writePostSuccessReq(resp.data)))
+      .catch((error) => dispatch(writePostFailed(console.warn(error.message))));
   };
 };
 
-export { send, clear, sendPost };
+export { txtTitle, clear, sendPost, txtArea };

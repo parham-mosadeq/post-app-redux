@@ -17,19 +17,25 @@ const writeReducer = (state = initState, action) => {
     case 'SUCCESS':
       return {
         ...state,
-        txtArea: action.payload.txtArea,
-        txtTitle: action.payload.txtTitle,
+        isSending: false,
       };
 
     case 'FAILED':
       return {
         ...state,
+        isSending: false,
         error: action.payload,
       };
 
-    case 'POST':
+    case 'TXT_TITLE':
       return {
         ...state,
+        txtTitle: action.payload,
+      };
+    case 'TXT_BODY':
+      return {
+        ...state,
+        txtArea: action.payload,
       };
 
     case 'CLEAR_FILED':
