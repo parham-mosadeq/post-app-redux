@@ -182,13 +182,132 @@ const LinkContainer = styled.article`
 
 // !write end
 
+// !posts start
+
+const MainContainerPosts = styled.main`
+  min-height: 100vh;
+  max-width: 100vw;
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+
+  button {
+    border: none;
+    border-radius: 8px;
+    padding: 7px 14px;
+    display: block;
+    margin: 2rem auto;
+    text-transform: capitalize;
+    font-family: sans-serif;
+    letter-spacing: 1.4px;
+    background: transparent;
+    color: skyblue;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  div {
+    margin: 1rem;
+    padding: 0.4rem;
+    background-color: gray;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in;
+    color: #ee4;
+  }
+
+  div:hover {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  }
+`;
+
+// !posts end
+
+// !post start
+
+const MainContainerPost = styled.div`
+  margin: 0;
+  padding: 0;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    letter-spacing: 1.1px;
+    color: #fff;
+    font-weight: 300;
+    text-align: center;
+    word-break: keep-all;
+  }
+
+  h3 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    margin-top: 0.3rem;
+    font-weight: lighter;
+    letter-spacing: 1.2px;
+  }
+
+  button {
+    border: none;
+    border-radius: 8px;
+    padding: 7px 14px;
+    display: block;
+    margin: 2rem auto;
+    text-transform: capitalize;
+    font-family: sans-serif;
+    letter-spacing: 1.4px;
+    background: transparent;
+    color: yellow;
+    cursor: pointer;
+    border-bottom: 1px solid;
+    transition: border 0.2s linear;
+  }
+
+  button:active {
+    border-bottom: none;
+  }
+`;
+
+const Tags = styled.div`
+  max-width: 250px;
+  width: 250px;
+  a {
+    color: #fff;
+    display: flex;
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
+    padding-left: 1rem;
+    margin: 0.3rem 0;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+  }
+`;
+
+// !post end
+
+
+// !tags start 
+
+
+
+
+// !tags end
+
 export {
   Article,
   WriteBtnContainer,
+  MainContainerPosts,
   Body,
   Btn,
   Nav,
   MainContainer,
   TitleInput,
   LinkContainer,
+  MainContainerPost,
+  Tags,
 };

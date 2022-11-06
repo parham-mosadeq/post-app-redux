@@ -1,20 +1,25 @@
 import React, { useState } from 'react';
 // router
 import { Link } from 'react-router-dom';
+// styles
 
+import { MainContainerPost, Tags } from '../styles/styles';
 const Post = ({ data }) => {
   const [expand, setExpand] = useState(false);
   const { title, body, tags, reactions } = data;
 
   return (
-    <div>
+    <MainContainerPost>
       <div>
         <h3>{title}...</h3>
-        <button onClick={() => setExpand(!expand)}>more</button>
-        <div>{expand && <p>{body}</p>}</div>
+        <button onClick={() => setExpand(!expand)}>
+          {expand ? 'show less' : 'show more'}
+        </button>
+        {expand && <p>{body}</p>}
       </div>
+      {/* tags reactions */}
       <div>
-        <div>
+        <Tags>
           ️🎨:
           {tags.map((tag, idx) => {
             return (
@@ -23,10 +28,10 @@ const Post = ({ data }) => {
               </Link>
             );
           })}
-        </div>
+        </Tags>
         <div>✍:{reactions}</div>
       </div>
-    </div>
+    </MainContainerPost>
   );
 };
 

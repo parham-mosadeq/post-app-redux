@@ -9,6 +9,8 @@ import Post from './Post';
 import Loader from './layouts/loader/Loader';
 // router
 import { useNavigate } from 'react-router-dom';
+// styles
+import { MainContainerPosts } from '../styles/styles';
 
 const Posts = () => {
   //managing loc's and nav's btn
@@ -31,15 +33,11 @@ const Posts = () => {
   } = postData;
 
   return (
-    <div>
+    <MainContainerPosts>
       {isLoading ? (
         <Loader />
       ) : posts ? (
-        posts.map((item) => (
-          <div key={item.id}>
-            <Post data={item} />
-          </div>
-        ))
+        posts.map((item) => <Post key={item.id} data={item} />)
       ) : (
         <p>{error}</p>
       )}
@@ -47,7 +45,7 @@ const Posts = () => {
       <div>
         <button onClick={() => nav('/')}>home</button>
       </div>
-    </div>
+    </MainContainerPosts>
   );
 };
 
