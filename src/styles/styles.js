@@ -188,8 +188,9 @@ const MainContainerPosts = styled.main`
   min-height: 100vh;
   max-width: 100vw;
   background-color: #fff;
-  margin: 0 auto;
   padding: 0.5rem 1rem;
+  display: block;
+  margin: auto;
 
   button {
     border: none;
@@ -197,6 +198,7 @@ const MainContainerPosts = styled.main`
     padding: 7px 14px;
     display: block;
     margin: 2rem auto;
+    max-width: 90vw;
     text-transform: capitalize;
     font-family: sans-serif;
     letter-spacing: 1.4px;
@@ -218,6 +220,27 @@ const MainContainerPosts = styled.main`
 
   div:hover {
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  }
+
+  @media (min-width: 879px) {
+    display: grid;
+    overflow-x: hidden;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 1312px) {
+    display: grid;
+    overflow-x: hidden;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (min-width: 2238px) {
+    display: grid;
+    overflow-x: hidden;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media (min-width: 2624px) {
+    display: grid;
+    overflow-x: hidden;
+    grid-template-columns: repeat(5, 1fr);
   }
 `;
 

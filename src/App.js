@@ -9,10 +9,9 @@ import Notfound from './components/Notfound';
 import Home from './components/Home';
 import Tags from './components/layouts/tags/Tags';
 import Write from './components/Write';
+import Navbar from './components/layouts/navbar/Navbar';
 // routes
 import { Route, Routes, Navigate } from 'react-router-dom';
-import Footer from './components/layouts/footer/Footer';
-import Navbar from './components/layouts/navbar/Navbar';
 
 const App = () => {
   return (
@@ -29,7 +28,6 @@ const App = () => {
             <Route path='*' element={<Navigate to='/notfound' />}></Route>
           </Routes>
         </div>
-        <Footer />
       </Provider>
     </>
   );
