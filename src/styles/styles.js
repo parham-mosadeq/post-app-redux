@@ -290,13 +290,26 @@ const Tags = styled.div`
 
 // !post end
 
+// !tags start
 
-// !tags start 
-
-
-
+const PostContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 1rem 2rem;
+  max-width: 100vw;
+  background: linear-gradient(180deg, green, skyblue);
+`;
 
 // !tags end
+
+// !home start
+const HomeContainer = styled.div`
+  height: 100vh;
+  max-width: 100vw;
+  background: linear-gradient(189deg, green, teal);
+`;
+// !home end
 
 export {
   Article,
@@ -310,4 +323,6 @@ export {
   LinkContainer,
   MainContainerPost,
   Tags,
+  PostContainer,
+  HomeContainer,
 };

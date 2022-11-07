@@ -12,17 +12,12 @@ import Write from './components/Write';
 // routes
 import { Route, Routes, Navigate } from 'react-router-dom';
 
-import styled from 'styled-components';
 
-const AppContainer = styled.div`
-  height: 100vh;
-  max-width: 100vw;
-  background: linear-gradient(189deg, green, teal);
-`;
+
 
 const App = () => {
   return (
-    <AppContainer>
+    <>
       <Provider store={store}>
         <div>
           <Routes>
@@ -34,10 +29,8 @@ const App = () => {
             <Route path='*' element={<Navigate to='/notfound' />}></Route>
           </Routes>
         </div>
-
-        <div></div>
       </Provider>
-    </AppContainer>
+    </>
   );
 };
 

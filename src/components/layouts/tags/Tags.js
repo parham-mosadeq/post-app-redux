@@ -3,6 +3,8 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 // redux
 import { useSelector } from 'react-redux';
+// style
+import { PostContainer } from '../../../styles/styles';
 
 const Tags = () => {
   const tag = useParams();
@@ -16,7 +18,7 @@ const Tags = () => {
   } = filteredState;
 
   return (
-    <div>
+    <PostContainer>
       {posts ? (
         <div>
           {/* main div start */}
@@ -76,7 +78,7 @@ const Tags = () => {
           <Link to='/'>home</Link>
         </div>
       )}
-    </div>
+    </PostContainer>
   );
 };
 
