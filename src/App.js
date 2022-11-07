@@ -11,14 +11,14 @@ import Tags from './components/layouts/tags/Tags';
 import Write from './components/Write';
 // routes
 import { Route, Routes, Navigate } from 'react-router-dom';
-
-
-
+import Footer from './components/layouts/footer/Footer';
+import Navbar from './components/layouts/navbar/Navbar';
 
 const App = () => {
   return (
     <>
       <Provider store={store}>
+        <Navbar />
         <div>
           <Routes>
             <Route index path='/' element={<Home />}></Route>
@@ -29,6 +29,7 @@ const App = () => {
             <Route path='*' element={<Navigate to='/notfound' />}></Route>
           </Routes>
         </div>
+        <Footer />
       </Provider>
     </>
   );
